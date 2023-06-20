@@ -58,7 +58,7 @@ void AnalogClock::paintEvent(QPaintEvent *)
     painter.restore();
     painter.setPen(hourColor);
     for (int i = 0; i < 24; ++i) {
-        painter.drawLine(75, 0, 85, 0);
+        painter.drawLine(73, 0, 83, 0);
         painter.rotate(15.0);
     }
     painter.setPen(Qt::NoPen);
@@ -69,8 +69,16 @@ void AnalogClock::paintEvent(QPaintEvent *)
     painter.restore();
     painter.setPen(minuteColor);
     for (int j = 0; j < 60; ++j) {
-        //if ((j % 3) != 0)
+        if ((j % 5) == 0)
+        {
+            painter.setPen(secColor);
+
+            painter.drawLine(88, 0, 96, 0);
+        } else
+        {
+            painter.setPen(minuteColor);
             painter.drawLine(92, 0, 96, 0);
+        }
         painter.rotate(6.0);
     }
 }
