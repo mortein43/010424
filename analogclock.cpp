@@ -47,7 +47,7 @@ void AnalogClock::paintEvent(QPaintEvent *)
     painter.setBrush(secColor);
     QTime time = QTime::currentTime();
     painter.save();
-    painter.rotate(6.0 * time.second());
+    painter.rotate(7.5 * time.second());
     painter.drawConvexPolygon(secHand, 3);
     painter.restore();
     painter.setPen(secColor);
